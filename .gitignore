@@ -1,0 +1,18 @@
+# LaTeX 编译生成文件
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.pdf  # 如果不想上传 PDF
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
