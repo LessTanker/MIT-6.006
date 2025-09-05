@@ -10,12 +10,12 @@
 
 \begin{document}
 
-\handout{Problem Set \theproblemsetnum}
+% \handout{Problem Set \theproblemsetnum}
 
 \setlength{\parindent}{0pt}
 \medskip\hrulefill\medskip
 
-{\bf Name:} Your Name
+{\bf Name:} LessTanker
 
 \medskip
 
@@ -82,9 +82,13 @@
 
 \begin{problemparts}
 \problempart % Problem 1a
+\((f_5,f_3,f_4,f_2,f_1)\)
 \problempart % Problem 1b
+\((\{f_1,f_2\},f_5,f_4,f_3)\)
 \problempart % Problem 1c
+\((\{f_2,f_5\},f_4,f_3,f_1)\)
 \problempart % Problem 1d
+\((f_5,f_3,f_4,f_2,f_1)\)
 \end{problemparts}
 
 \newpage
@@ -92,19 +96,48 @@
 
 \begin{problemparts}
 \problempart % Problem 2a
+In a for loop from j=0 to k-1, call insert\_at(i+k-j-1,delete\_at(i)).
+
+My idea is in a loop, each time we move one element from front to the end,
+then the first place`s  index will always be i, and the last index to reverse is correspond
+to j, and the index to insert in is i+k-j-1.
 \problempart % Problem 2b
+In a for loop from it=0 to k-1,call insert\_at(j-it-1,delete\_at(i+k-it-1)).
+
+Similiar to the above one, my solution is to delete the original list from the end,
+then move the element to the front of index j.
 \end{problemparts}
 
 \newpage
 \problem  % Problem 3
+My solution is a linked list with index inside the value.
 
+For initialization, obviously a linked list takes O(x) time to do.
+place\_mark(i,m) can even go to O(1) time, while read\_page(i),shift\_mark(m,d) and
+move\_page(m) is just basic linked list operation which all takes O(1) time.
 \newpage
 \problem  % Problem 4
 
 \begin{problemparts}
 \problempart % Problem 4a
+insert\_first(x) needs to let head.prev = x , x.next = head, x.prev = null.
+
+insert\_last(x) needs to let tail.next = x , x.prev = tail, x.next=null.
+
+delete\_first() needs to set head.next.prev = null.
+
+delete\_last() needs to set last.prev.next = null.
 \problempart % Problem 4b
+let a = x1.next, b=x2.prev.
+
+Then set a.prev = null, b.next=null.
+
+Next,let x1.next = x2, x2.prev = x1
+
+Finally, return a as the head of the new doubly linked list, b as the tail.
 \problempart % Problem 4c
+Remember x.next as y,then set x.next = L2.head, L2.head.prev = x,L2.tail.next = y,
+y.prev=L2.tail.
 \problempart Submit your implementation to {\small\url{alg.mit.edu}}.
 \end{problemparts}
 

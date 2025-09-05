@@ -8,7 +8,6 @@
 *.synctex.gz
 *.fdb_latexmk
 *.fls
-*.pdf  # 如果不想上传 PDF
 
 # Python
 __pycache__/

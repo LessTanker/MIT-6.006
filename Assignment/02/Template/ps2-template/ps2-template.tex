@@ -1,0 +1,172 @@
+%
+% 6.006 problem set 2 solutions template
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros-sp20}
+\newcommand{\theproblemsetnum}{2}
+
+\title{6.006 Problem Set 2}
+
+\begin{document}
+
+% \handout{Problem Set \theproblemsetnum}
+
+\setlength{\parindent}{0pt}
+\medskip\hrulefill\medskip
+
+{\bf Name:} LessTanker
+
+\medskip
+
+{\bf Collaborators:} Name1, Name2
+
+\medskip\hrulefill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% See below for common and useful latex constructs. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Some useful commands:
+%$f(x) = \Theta(x)$
+%$T(x, y) \leq \log(x) + 2^y + \binom{2n}{n}$
+% {\tt code\_function}
+
+
+% You can create unnumbered lists as follows:
+%\begin{itemize}
+%    \item First item in a list
+%        \begin{itemize}
+%            \item First item in a list
+%                \begin{itemize}
+%                    \item First item in a list
+%                    \item Second item in a list
+%                \end{itemize}
+%            \item Second item in a list
+%        \end{itemize}
+%    \item Second item in a list
+%\end{itemize}
+
+% You can create numbered lists as follows:
+%\begin{enumerate}
+%    \item First item in a list
+%    \item Second item in a list
+%    \item Third item in a list
+%\end{enumerate}
+
+% You can write aligned equations as follows:
+%\begin{align}
+%    \begin{split}
+%        (x+y)^3 &= (x+y)^2(x+y) \\
+%                &= (x^2+2xy+y^2)(x+y) \\
+%                &= (x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3) \\
+%                &= x^3+3x^2y+3xy^2+y^3
+%    \end{split}
+%\end{align}
+
+% You can create grids/matrices as follows:
+%\begin{align}
+%    A =
+%    \begin{bmatrix}
+%        A_{11} & A_{21} \\
+%        A_{21} & A_{22}
+%    \end{bmatrix}
+%\end{align}
+
+% You can include images and PDFs as follows:
+% \includegraphics[width=0.5\textwidth]{img.jpg}
+
+\begin{problems}
+
+\problem  % Problem 1
+
+\begin{problemparts}
+\problempart % Problem 1a
+\[T(n) = \Theta(n^2)\]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{tree1.jpg}
+\end{center}
+\problempart % Problem 1b
+\[T(n) = \Theta(n^4)\]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{tree2.jpg}
+\end{center}
+\problempart % Problem 1c
+\[T(n) = \Theta(n\log^2 n)\]
+\begin{center}
+  \includegraphics[width=0.7\textwidth]{tree3.jpg}
+\end{center}
+\problempart % Problem 1d
+\[T(n) = \Theta(n^2)\]
+\end{problemparts}
+
+\newpage
+\problem  % Problem 2
+
+\begin{problemparts}
+\problempart % Problem 2a
+Selection Sort
+
+For each single item, to get it in the proper place,
+select sort needs a swap operation,which is 2 time
+set\_at operation.
+
+But for insert sort, each single item needs n times 
+set\_at operation, which is worse. Also same for 
+merge sort.
+\problempart % Problem 2b
+Merge Sort
+
+For select sort and insert sort, both need $O(n^2)$ times to compare,
+take $O(n^2\log n)$ . But for Merge Sort, only takes $O(n\log^2 n)$.
+\problempart % Problem 2c
+Insertion Sort
+
+As most items in A is already sorted($\log\log n$ is much smaller than $n$).
+\end{problemparts}
+
+% \newpage
+\problem  % Problem 3
+\begin{itemize}
+  \item Binary Search is quite easy to think of, I`m not sure whether I should consider
+that the end of the island is submerging??
+\end{itemize}
+
+% \newpage
+\problem  % Problem 4
+
+\hspace{2em} Store a viewer as a struct,includes the viewer`s ID,as well as an array store pointers
+that point to all messages the viewer had said.
+Store all viewers in a sorted order with merge sort which is $O(n\log n)$,with a 
+comparison of each viewer`s ID.
+Then store all messages as a linked list, a single node represents a viewer`s message.
+
+For those operations:
+\begin{itemize}
+  \item $build(V)$ : Sort all viewers by their ID using merge sort cost $O(n\log n)$.
+  \item $send(v,m)$ : Find viewer v with binary search cost $O(\log n)$,then sends a
+  message, change the state of the struct v and the linked list both cost $O(1)$.
+  \item $recent(k)$ : Here we can assume that each time we insert a new message, 
+  we insert it in the front rather than from the end. Then we can return the k most recent
+  messages in $O(k)$ time.
+  \item $ban(v)$ : Find viewer v cost $O(\log n)$ and delete all the message from the linked
+  list which is stored in struct v cost $O(n_v)$. So totally cost $O(n_v+\log n)$.
+\end{itemize}
+\newpage
+\problem  % Problem 5
+
+\begin{problemparts}
+\problempart % Problem 5a
+Firstly, try to find out how many time scope we need to take.We can do this by checking
+every tuple in $B_1$ and $B_2$, apparently this can be done in $O(n)$ time.
+
+Then, check every time scope to see how many rooms $B_1$ and $B_2$ have reserved
+and then $B$ should take the amount of $B_1+B_2$.
+\problempart % Problem 5b
+Take $(a)$, seems like merge sort
+\problempart Submit your implementation to {\small\url{alg.mit.edu}}.
+\end{problemparts}
+
+\end{problems}
+
+\end{document}
