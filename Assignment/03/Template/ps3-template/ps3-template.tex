@@ -1,0 +1,147 @@
+%
+% 6.006 problem set 3 solutions template
+%
+\documentclass[12pt,twoside]{article}
+
+\input{macros-sp20}
+\newcommand{\theproblemsetnum}{3}
+
+\title{6.006 Problem Set \theproblemsetnum}
+
+\begin{document}
+
+%\handout{Problem Set \theproblemsetnum}
+
+\setlength{\parindent}{0pt}
+\medskip\hrulefill\medskip
+
+{\bf Name:} LessTanker
+
+\medskip
+
+{\bf Collaborators:} ChatGPT, Name2
+
+\medskip\hrulefill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% See below for common and useful latex constructs. %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Some useful commands:
+%$f(x) = \Theta(x)$
+%$T(x, y) \leq \log(x) + 2^y + \binom{2n}{n}$
+% {\tt code\_function}
+
+
+% You can create unnumbered lists as follows:
+%\begin{itemize}
+%    \item First item in a list
+%        \begin{itemize}
+%            \item First item in a list
+%                \begin{itemize}
+%                    \item First item in a list
+%                    \item Second item in a list
+%                \end{itemize}
+%            \item Second item in a list
+%        \end{itemize}
+%    \item Second item in a list
+%\end{itemize}
+
+% You can create numbered lists as follows:
+%\begin{enumerate}
+%    \item First item in a list
+%    \item Second item in a list
+%    \item Third item in a list
+%\end{enumerate}
+
+% You can write aligned equations as follows:
+%\begin{align}
+%    \begin{split}
+%        (x+y)^3 &= (x+y)^2(x+y) \\
+%                &= (x^2+2xy+y^2)(x+y) \\
+%                &= (x^3+2x^2y+xy^2) + (x^2y+2xy^2+y^3) \\
+%                &= x^3+3x^2y+3xy^2+y^3
+%    \end{split}
+%\end{align}
+
+% You can create grids/matrices as follows:
+%\begin{align}
+%    A =
+%    \begin{bmatrix}
+%        A_{11} & A_{21} \\
+%        A_{21} & A_{22}
+%    \end{bmatrix}
+%\end{align}
+
+% You can include images and PDFs as follows:
+% \includegraphics[width=0.5\textwidth]{img.jpg}
+
+\begin{problems}
+
+\problem  % Problem 1
+
+\begin{problemparts}
+\problempart % Problem 1a
+The picture is as follows:\\
+\includegraphics[width=0.5\textwidth]{1.jpg}
+\problempart % Problem 1b
+13: Calculate from the smallest prime p with $p>10$ ,11 is not ok, then 13 does.
+\end{problemparts}
+
+% \newpage
+
+\problem  % Problem 2
+
+\begin{problemparts}
+\problempart % Problem 2a
+\[k_1 = k_2 + t\cdot n(t\in \mathbb{N})\]
+\problempart % Problem 2b
+Choose $k_1$ and $k_2$ to be adjacent so that 
+\[|\frac{k_1n}{u}| = |\frac{k_2n}{u}|\]
+\problempart % Problem 2c
+We can`t  guarantee that they will be roommates because in a universal hash family,
+the probability of two keys collide is at most $\frac{1}{n}$.
+\end{problemparts}
+
+% \newpage
+
+\problem  % Problem 3
+
+\begin{problemparts}
+\problempart % Problem 3a
+Using radix sort to make this $O(n)$
+\problempart % Problem 3b
+radix sort again?
+\problempart % Problem 3c
+IF n is a constant, then use radix sort by multipling $n^3$
+\problempart % Problem 3d
+Merge sort this time because we need to compare.
+\end{problemparts}
+
+\newpage
+
+\problem  % Problem 4
+
+\begin{problemparts}
+\problempart % Problem 4a
+hash
+\problempart % Problem 4b
+Radix sort first, then use two pointers, the first one marks the head, the other one marks the tail.
+If the total of two pointers is bigger than $r$, then move tail pointer one step back.
+Otherwise, move head pointer one step forward till find the closest one.
+\end{problemparts}
+
+\newpage
+
+\problem  % Problem 5
+
+\begin{problemparts}
+\problempart % Problem 5a
+
+\problempart % Problem 5b
+\problempart Submit your implementation to {\small\url{alg.mit.edu}}.
+\end{problemparts}
+
+\end{problems}
+
+\end{document}
